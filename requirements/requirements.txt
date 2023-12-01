@@ -1,0 +1,4 @@
+scrapy
+requests
+python-docx
+tqdm
