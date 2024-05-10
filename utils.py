@@ -198,7 +198,10 @@ def extract_info(conference: str, paper: dict) -> Dict[str, str]:
         if conference == "NeurIPS":
             paper_info['tldr'] = _restrain_bytes(_locate_info(paper['content']['TLDR']))
         elif conference == "ICLR":
-            paper_info['tldr'] = _restrain_bytes(_locate_info(paper['content']['TL;DR']))
+            if 'TL;DR' in paper['content'].keys():
+                paper_info['tldr'] = _restrain_bytes(_locate_info(paper['content']['TL;DR']))
+            else:
+                paper_info['tldr'] = _restrain_bytes(_locate_info(paper['content']['TLDR']))
         elif conference == "ICML":
             paper_info['tldr'] = None
     except KeyError:
@@ -224,7 +227,6 @@ def parse_openreview(conference: str, year: str, accepted_types: List[str], toc:
                 _json_data = json.load(_f)
         else:
             _json_data = requests.get(_url).json()
-            print('json data', _json_data)
             _paper_counts = int(_json_data['count'])
             _default_offset = 1000
             if _paper_counts > _default_offset:
@@ -368,7 +370,6 @@ def get_openreview_url(conference: str, year: str, accepted_types: List[str]) ->
             url[accepted_type] = url_v1
             if year == "2024":
                 url[accepted_type] = url_v2.replace('+', '%20')
-                print(url[accepted_type])
             elif year == "2023":
                 # adapt to qualified web format
                 web_accepted_type = accepted_type.replace('_', '+').replace('%', '%25')
