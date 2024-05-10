@@ -2,14 +2,14 @@ This program is developed to crawl **CVPR**, **ICCV**, **NeurIPS**, **ICLR**, **
 
 ## Supported conferences and corresponding years
 
-|         |        2023        |           2022           |           2021           |
-| :-----: | :----------------: | :----------------------: | :----------------------: |
-|  CVPR   | :heavy_check_mark: |    :heavy_check_mark:    |    :heavy_check_mark:    |
-|  ICCV   | :heavy_check_mark: |    :heavy_minus_sign:    |    :heavy_check_mark:    |
-| NeurIPS | :heavy_check_mark: |    :heavy_check_mark:    |    :heavy_check_mark:    |
-|  ICLR   | :heavy_check_mark: |    :heavy_check_mark:    |    :heavy_check_mark:    |
-|  ICML   | :heavy_check_mark: | :heavy_multiplication_x: | :heavy_multiplication_x: |
-|  ECCV   | :heavy_minus_sign: |    :heavy_check_mark:    |    :heavy_minus_sign:    |
+|         |        2024        |        2023        |           2022           |           2021           |
+| :-----: | :----------------: | :----------------: | :----------------------: | :----------------------: |
+|  CVPR   |                    | :heavy_check_mark: |    :heavy_check_mark:    |    :heavy_check_mark:    |
+|  ICCV   |                    | :heavy_check_mark: |    :heavy_minus_sign:    |    :heavy_check_mark:    |
+| NeurIPS |                    | :heavy_check_mark: |    :heavy_check_mark:    |    :heavy_check_mark:    |
+|  ICLR   | :heavy_check_mark: | :heavy_check_mark: |    :heavy_check_mark:    |    :heavy_check_mark:    |
+|  ICML   |                    | :heavy_check_mark: | :heavy_multiplication_x: | :heavy_multiplication_x: |
+|  ECCV   |                    | :heavy_minus_sign: |    :heavy_check_mark:    |    :heavy_minus_sign:    |
 
 :heavy_check_mark: denotes that it is available.
 

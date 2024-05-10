@@ -60,7 +60,7 @@ def lazy_export(args: argparse.PARSER) -> None:
         elif conference == "NeurIPS":
             _export(args, ["2023", "2022", "2021"])
         elif conference == "ICLR":
-            _export(args, ["2023", "2022", "2021"])
+            _export(args, ["2024", "2023", "2022", "2021"])
         elif conference == "ICML":
             _export(args, ["2023"])
         elif conference == "ECCV":
@@ -111,9 +111,11 @@ def collate(conference: str, year: str, select: bool) -> Tuple[str, List[str]]:
                 accepted_types = ["Oral", "Spotlight", "Poster"]
 
         elif conference == "ICLR":
-            assert year in ["2023", "2022", "2021"], f"unsupported year for {conference} so far"
+            assert year in ["2024", "2023", "2022", "2021"], f"unsupported year for {conference} so far"
 
-            if year == "2023":
+            if year == "2024":
+                accepted_types = ["oral", "spotlight", "poster"]
+            elif year == "2023":
                 accepted_types = ["notable_top_5%", "notable_top_25%", "poster"]
             elif year in ["2022", "2021"]:
                 accepted_types = ["Oral", "Spotlight", "Poster"]
@@ -222,6 +224,7 @@ def parse_openreview(conference: str, year: str, accepted_types: List[str], toc:
                 _json_data = json.load(_f)
         else:
             _json_data = requests.get(_url).json()
+            print('json data', _json_data)
             _paper_counts = int(_json_data['count'])
             _default_offset = 1000
             if _paper_counts > _default_offset:
@@ -363,7 +366,10 @@ def get_openreview_url(conference: str, year: str, accepted_types: List[str]) ->
 
         elif conference == "ICLR":
             url[accepted_type] = url_v1
-            if year == "2023":
+            if year == "2024":
+                url[accepted_type] = url_v2.replace('+', '%20')
+                print(url[accepted_type])
+            elif year == "2023":
                 # adapt to qualified web format
                 web_accepted_type = accepted_type.replace('_', '+').replace('%', '%25')
                 url[accepted_type] = url_v1.replace(f"{accepted_type}", web_accepted_type)
