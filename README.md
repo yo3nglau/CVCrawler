@@ -4,12 +4,12 @@ This program is developed to crawl **CVPR**, **ICCV**, **NeurIPS**, **ICLR**, **
 
 |         |        2024        |        2023        |           2022           |           2021           |
 | :-----: | :----------------: | :----------------: | :----------------------: | :----------------------: |
-|  CVPR   |                    | :heavy_check_mark: |    :heavy_check_mark:    |    :heavy_check_mark:    |
-|  ICCV   |                    | :heavy_check_mark: |    :heavy_minus_sign:    |    :heavy_check_mark:    |
-| NeurIPS |                    | :heavy_check_mark: |    :heavy_check_mark:    |    :heavy_check_mark:    |
+|  CVPR   |      upcoming      | :heavy_check_mark: |    :heavy_check_mark:    |    :heavy_check_mark:    |
+|  ICCV   | :heavy_minus_sign: | :heavy_check_mark: |    :heavy_minus_sign:    |    :heavy_check_mark:    |
+| NeurIPS |      upcoming      | :heavy_check_mark: |    :heavy_check_mark:    |    :heavy_check_mark:    |
 |  ICLR   | :heavy_check_mark: | :heavy_check_mark: |    :heavy_check_mark:    |    :heavy_check_mark:    |
-|  ICML   |                    | :heavy_check_mark: | :heavy_multiplication_x: | :heavy_multiplication_x: |
-|  ECCV   |                    | :heavy_minus_sign: |    :heavy_check_mark:    |    :heavy_minus_sign:    |
+|  ICML   |      upcoming      | :heavy_check_mark: | :heavy_multiplication_x: | :heavy_multiplication_x: |
+|  ECCV   |      upcoming      | :heavy_minus_sign: |    :heavy_check_mark:    |    :heavy_minus_sign:    |
 
 :heavy_check_mark: denotes that it is available.
 
