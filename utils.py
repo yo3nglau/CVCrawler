@@ -238,13 +238,13 @@ def parse_openreview(conference: str, year: str, accepted_types: List[str], toc:
         return _json_data
 
     urls = get_openreview_url(conference, year, accepted_types)
-    for accepted_type, _url in urls.items():
+    for accepted_type, url in urls.items():
         document = Document()
         if toc:
             generate_toc(document)
             document.add_page_break()
 
-        json_data = _json_logits(f'logits/{conference}_{year}_{accepted_type}_Abstract.json', _url)
+        json_data = _json_logits(f'logits/{conference}_{year}_{accepted_type}_Abstract.json', url)
 
         for paper in tqdm(json_data['notes']):
             title = extract_info(conference, paper)['title']
