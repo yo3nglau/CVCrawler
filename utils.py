@@ -207,6 +207,8 @@ def extract_info(conference: str, paper: dict) -> Dict[str, str]:
     except KeyError:
         paper_info['tldr'] = None
 
+    paper_info['full_text'] = _restrain_bytes('https://openreview.net' + _locate_info(paper['content']['pdf']))
+
     return paper_info
 
 
@@ -249,17 +251,14 @@ def parse_openreview(conference: str, year: str, accepted_types: List[str], toc:
         json_data = _json_logits(f'logits/{conference}_{year}_{accepted_type}_Abstract.json', url)
 
         for paper in tqdm(json_data['notes']):
-            title = extract_info(conference, paper)['title']
-            authors = extract_info(conference, paper)['authors']
-            keywords = extract_info(conference, paper)['keywords']
-            abstract = extract_info(conference, paper)['abstract']
-            tldr = extract_info(conference, paper)['tldr']
+            info = extract_info(conference, paper)
 
-            document.add_heading(title, level=2)
-            bold_prefix(document, "Authors: ", authors)
-            bold_prefix(document, "Keywords: ", keywords)
-            bold_prefix(document, "TLDR: ", tldr)
-            bold_prefix(document, "Abstract: ", abstract)
+            document.add_heading(info['title'], level=2)
+            bold_prefix(document, "Authors: ", info['authors'])
+            bold_prefix(document, "Keywords: ", info['keywords'])
+            bold_prefix(document, "TLDR: ", info['tldr'])
+            bold_prefix(document, "Abstract: ", info['abstract'])
+            bold_prefix(document, "Full Text: ", info['full_text'])
 
         if not os.path.exists('results'):
             os.makedirs('results')
