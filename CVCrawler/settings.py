@@ -1,4 +1,4 @@
-# Scrapy settings for crawl_paper_abstract project
+# Scrapy settings for CVCrawler project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "crawl_paper_abstract"
+BOT_NAME = "CVCrawler"
 
-SPIDER_MODULES = ["crawl_paper_abstract.spiders"]
-NEWSPIDER_MODULE = "crawl_paper_abstract.spiders"
+SPIDER_MODULES = ["CVCrawler.spiders"]
+NEWSPIDER_MODULE = "CVCrawler.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "crawl_paper_abstract (+http://www.yourdomain.com)"
+#USER_AGENT = "CVCrawler (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "crawl_paper_abstract.middlewares.CrawlPaperAbstractSpiderMiddleware": 543,
+#    "CVCrawler.middlewares.CrawlPaperAbstractSpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    "crawl_paper_abstract.middlewares.CrawlPaperAbstractDownloaderMiddleware": 543,
+#    "CVCrawler.middlewares.CrawlPaperAbstractDownloaderMiddleware": 543,
 #}
 
 # Enable or disable extensions
@@ -63,7 +63,7 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    "crawl_paper_abstract.pipelines.CrawlPaperAbstractPipeline": 300,
+#    "CVCrawler.pipelines.CrawlPaperAbstractPipeline": 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
